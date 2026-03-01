@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="description" content="Warm Brownian noise generator to help babies sleep." />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- iOS home-screen PWA -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="Baby Sleep" />
+
+  <title>Baby Sleep · Brown Noise</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Baby Sleep</h1>
+      <p class="subtitle">Warm Brown Noise</p>
+    </header>
+
+    <main>
+      <!-- Toggle button -->
+      <button id="toggleBtn" class="btn" aria-label="Start brown noise">
+        <!-- Play icon -->
+        <svg class="btn-icon play-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <polygon points="6,3 20,12 6,21" fill="currentColor" />
+        </svg>
+        <!-- Pause icon -->
+        <svg class="btn-icon pause-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="5"  y="4" width="5" height="16" rx="1" fill="currentColor" />
+          <rect x="14" y="4" width="5" height="16" rx="1" fill="currentColor" />
+        </svg>
+        <span class="btn-label" id="btnLabel">Start</span>
+      </button>
+
+      <p class="status" id="status">Tap to begin</p>
+
+      <!-- Animated waveform bars (CSS-only, no canvas) -->
+      <div class="bars" id="bars" aria-hidden="true">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <!-- Volume control -->
+      <div class="volume-row">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+          <path d="M3 9v6h4l5 5V4L7 9H3z" />
+        </svg>
+        <input
+          type="range"
+          id="volume"
+          min="0" max="1" step="0.01" value="0.7"
+          aria-label="Volume"
+        />
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+          <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+        </svg>
+      </div>
+    </main>
+
+    <footer>
+      <p>Screen stays on while playing &middot; Lower brightness for the nursery</p>
+    </footer>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

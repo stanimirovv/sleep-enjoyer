@@ -1,0 +1,19 @@
+# Claude Code
+.claude/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor directories
+.vscode/
+.idea/
+
+# Node (if you ever add a dev server)
+node_modules/
+npm-debug.log*
+
+# Environment / secrets
+.env
+.env.*
